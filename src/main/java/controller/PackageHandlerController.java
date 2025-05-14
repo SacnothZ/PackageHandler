@@ -7,9 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import model.PackageHandler;
-import org.w3c.dom.Text;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.time.LocalDate;
@@ -31,6 +29,9 @@ public class PackageHandlerController {
     private Label systemFee;
     @FXML
     private Label totalCost;
+    @FXML
+    private Label savedDate;
+
     private PackageHandler packageHandler;
 
 
@@ -50,20 +51,20 @@ public class PackageHandlerController {
     public void calculatingfees(ActionEvent actionEvent) throws Exception{
         var objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
         var objectMapperTime = new ObjectMapper().registerModule(new JavaTimeModule()).configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS,false);
-        var pkg = new PackageHandlerJson();
+        var pkg = new Package();
 
         // Ui-ra írás
         int standardfee=400;
-        int v1 = Integer.parseInt(packageHandler.heightCost(packageHeight.getText()));
-        int v2 = Integer.parseInt(packageHandler.weightCost(packageWeight.getText()));
-        int v3 = Integer.parseInt(packageHandler.systemCost(packageValue.getText()));
+        int v1 = packageHandler.heightCost(Integer.parseInt(packageHeight.getText()));
+        int v2 = packageHandler.weightCost(Integer.parseInt(packageWeight.getText()));
+        int v3 = packageHandler.systemCost(Integer.parseInt(packageValue.getText()));
         int total = v1+v2+v3+standardfee;
-        extraheightFee.setText(packageHandler.heightCost(packageHeight.getText()) + " Ft");
-        extraweightFee.setText(packageHandler.weightCost(packageWeight.getText()) + " Ft");
-        systemFee.setText(packageHandler.systemCost(packageValue.getText()) + " Ft");
-        totalCost.setText(String.valueOf(total) + " Ft");
+        extraheightFee.setText(packageHandler.heightCost(Integer.parseInt(packageHeight.getText())) + " Ft");
+        extraweightFee.setText(packageHandler.weightCost(Integer.parseInt(packageWeight.getText())) + " Ft");
+        systemFee.setText(packageHandler.systemCost(Integer.parseInt(packageValue.getText())) + " Ft");
+        totalCost.setText(total + " Ft");
 
-        //Json
+        //Mentés
         var localDate = objectMapperTime.writeValueAsString(LocalDate.now());
         pkg.setPackageId(packageId.getText());
         pkg.setPackageHeight(Integer.parseInt(packageHeight.getText()));
@@ -71,9 +72,35 @@ public class PackageHandlerController {
         pkg.setPackageValue(Integer.parseInt(packageValue.getText()));
         pkg.setPackageFees(total);
         pkg.setHandlingDate(localDate);
-        try (var writer = new FileWriter("pkg.json")) {
+        try (var writer = new FileWriter(packageId.getText()+".json")) {
             objectMapper.writeValue(writer, pkg);
         }
-       System.out.println(objectMapper.readValue(new FileReader("pkg.json"), PackageHandlerJson.class));
+       System.out.println(objectMapper.readValue(new FileReader(packageId.getText()+".json"), Package.class));
+    }
+
+
+
+    // Betöltés
+    public void loadJsonData(ActionEvent actionEvent) throws  Exception {
+        var objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
+        var jsondata = objectMapper.readValue(new FileReader(packageId.getText()+".json"), Package.class);
+
+
+    //Textfieldek
+    packageHeight.setText(Integer.toString(jsondata.getPackageHeight()));
+    packageWeight.setText(Integer.toString(jsondata.getPackageWeight()));
+    packageValue.setText(Integer.toString(jsondata.getPackageValue()));
+    savedDate.setText(jsondata.getHandlingDate());
+    //Labelek
+    int standardfee=400;
+    int v1 = packageHandler.heightCost(Integer.parseInt(packageHeight.getText()));
+    int v2 = packageHandler.weightCost(Integer.parseInt(packageWeight.getText()));
+    int v3 = packageHandler.systemCost(Integer.parseInt(packageValue.getText()));
+    int total = v1+v2+v3+standardfee;
+    extraheightFee.setText(packageHandler.heightCost(Integer.parseInt(packageHeight.getText())) + " Ft");
+    extraweightFee.setText(packageHandler.weightCost(Integer.parseInt(packageWeight.getText())) + " Ft");
+    systemFee.setText(packageHandler.systemCost(Integer.parseInt(packageValue.getText())) + " Ft");
+    totalCost.setText(total + " Ft");
+
     }
 }

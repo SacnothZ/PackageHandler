@@ -5,32 +5,31 @@ public class PackageHandler {
 
 
 
-    public String weightCost(String wc)
+    public Integer weightCost(Integer wc)
     {
-        int number=Integer.parseInt(wc);
-        if(number>5000) {
-            return "200";
+
+        if(wc>5000) {
+            return 200;
         }
-        return "0";
+        return 0;
     }
 
 
-    public String heightCost(String hc)
+    public Integer heightCost(Integer hc)
     {
-        int number=Integer.parseInt(hc);
-        if(number>100) {
-            return "300";
+
+        if(hc>100) {
+            return 300;
         }
-        return "0";
+        return 0;
 
     }
 
 
-    public String systemCost(String sc)
+    public Integer systemCost(Integer sc)
     {
         double increase=0.01;
-        int charge=Integer.parseInt(sc);
-        return Integer.toString((int)(increase*charge));
+        return (int)(increase*sc);
     }
 
 

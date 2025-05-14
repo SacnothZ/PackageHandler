@@ -33,6 +33,9 @@
       <Label layoutX="238.0" layoutY="52.0" text="cm" />
       <Label layoutX="238.0" layoutY="82.0" text="g" />
       <Label layoutX="238.0" layoutY="112.0" text="Ft" />
-      <Button fx:id="calculateFees" layoutX="55.0" layoutY="298.0" mnemonicParsing="false" onAction="#calculatingfees" prefHeight="56.0" prefWidth="99.0" text="Kiszámolás" />
+      <Button fx:id="calculateFees" layoutX="62.0" layoutY="282.0" mnemonicParsing="false" onAction="#calculatingfees" prefHeight="56.0" prefWidth="99.0" text="Mentés" />
+      <Button fx:id="loadJsondata" layoutX="243.0" layoutY="18.0" mnemonicParsing="false" onAction="#loadJsonData" text="Betöltés" />
+      <Label layoutX="25.0" layoutY="143.0" style="-fx-background-color: black;" text="Mentés Dátuma:" textFill="#f2f5f2" />
+      <Label fx:id="savedDate" layoutX="146.0" layoutY="143.0" text="-" />
    </children>
 </AnchorPane>

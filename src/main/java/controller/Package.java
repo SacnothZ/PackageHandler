@@ -1,7 +1,7 @@
 package controller;
 
 @lombok.Data
-public class PackageHandlerJson {
+public class Package {
 
     private String packageId;
     private int packageHeight;

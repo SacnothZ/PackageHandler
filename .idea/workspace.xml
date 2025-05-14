@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e9db769-2dd5-4680-aa5c-c58f8ba40492" name="Changes" comment="" />
+    <list default="true" id="2e9db769-2dd5-4680-aa5c-c58f8ba40492" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PackageHandlerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PackageHandlerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PackageHandlerJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Package.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/PackageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/PackageHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/packagehandler.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/packagehandler.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/PackageHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/PackageHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/PackageHandlerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/PackageHandlerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/PackageHandlerJson.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/PackageHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/PackageHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/packagehandler.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/packagehandler.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/model/PackageHandlerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/model/PackageHandlerTest.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +32,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -32,10 +48,13 @@
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PackageHandlerTest.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/RT/Desktop/PackageHandler/src/main/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/RT/Desktop/PackageHandler&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/RT/Desktop/PackageHandler/src/main/java/org/example/Main.java&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;
   }
